@@ -1,13 +1,14 @@
 package com.cg.flightsearchapp.domain;
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import javax.persistence.Id;  
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 //import javax.validation.constraints.NotBlank;
 import java.util.Date;
@@ -41,7 +42,7 @@ public class FlightDto implements Serializable {
 	  private LocalDateTime arrivalTime;
 	  
 	  @Column(name="PRICE")
-	  private String flightPrice;
+	  private BigDecimal flightPrice;
 
 	/**
 	 * @return the flightNO
@@ -116,16 +117,18 @@ public class FlightDto implements Serializable {
 	/**
 	 * @return the flightPrice
 	 */
-	public String getFlightPrice() {
+	public BigDecimal getFlightPrice() {
 		return flightPrice;
 	}
 
 	/**
 	 * @param flightPrice the flightPrice to set
 	 */
-	public void setFlightPrice(String flightPrice) {
+	public void setFlightPrice(BigDecimal flightPrice) {
 		this.flightPrice = flightPrice;
 	}
+
+
 
 
 	
